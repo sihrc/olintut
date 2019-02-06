@@ -1,7 +1,7 @@
 FROM alpine
 
-LABEL author="{{author}}"
-LABEL email="{{email}}"
+LABEL author="Chris Lee"
+LABEL email="chris@indico.io"
 
 COPY requirements.txt /requirements.txt
 RUN apk update && \
@@ -16,8 +16,8 @@ RUN apk update && \
     rm -r /root/.cache && \
     pip3 install -r /requirements.txt
 
-COPY . /{{package}}
-WORKDIR /{{package}}
+COPY . /olintut
+WORKDIR /olintut
 
 RUN python3 setup.py develop
 
